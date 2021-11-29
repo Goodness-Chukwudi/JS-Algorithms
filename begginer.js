@@ -43,17 +43,17 @@ function largestVals(arr) {
 
 	//Method One
 	for (let i = 0; i < arr.length; i++) {
-		let maxNum = Math.max(...arr[i]);
+		let maxNum = Math.max(...arr[i]); //Use for loops for large arrays
 		result.push(maxNum);
 	}
 	// Method Two
-	for (let i = 0; i < arr.length; i++) {
-		let maxNum = arr[i][0];
-		for (let j = 1; j < arr[i].length; j++) {
-			if (arr[i][j] > maxNum) maxNum = arr[i][j];
-		}
-		result.push(maxNum);
-	}
+	// for (let i = 0; i < arr.length; i++) {
+	// 	let maxNum = arr[i][0];
+	// 	for (let j = 1; j < arr[i].length; j++) {
+	// 		if (arr[i][j] > maxNum) maxNum = arr[i][j];
+	// 	}
+	// 	result.push(maxNum);
+	// }
 
 	return result;
 }
@@ -135,5 +135,13 @@ function position(arr, num) {
 	return result;
 }
 
-const result = position([2, 4, 6, 3], 4);
+function findMax(arr) {
+	let val = arr[0];
+	for (let i = 1, len = arr.length; i < len; i++) {
+		if (arr[i] > val) val = arr[i];
+	}
+	return val;
+}
+
+const result = findMax([25, 2, 4, 6, 3, 10]);
 console.log(result);
